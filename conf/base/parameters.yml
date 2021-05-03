@@ -1,0 +1,11 @@
+test_size: 0.2
+train_size: 0.8
+random_state: 42
+target: HousePriceinK
+features:
+  - Lat
+  - Long
+  - Area
+  - NoofBedrooms
+  - NoofBathrooms
+  - OnFloor

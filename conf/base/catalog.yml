@@ -1,0 +1,38 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+
+
+mumbai:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/nb_data.csv
+    layer: raw
+    
+covid:
+    type: pandas.CSVDataSet
+    filepath: https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=alertLevel&metric=cumCasesByPublishDate&format=csv
+    layer: raw
+    
+X_train:
+    type: MemoryDataSet
+    layer: intermediate
+    
+X_test:
+    type: MemoryDataSet
+    layer: intermediate
+
+y_train:
+    type: MemoryDataSet
+    layer: intermediate
+
+y_test:
+    type: MemoryDataSet
+    layer: intermediate
+    
+regressor:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/regressor.pickle
+  versioned: true
+  layer: models
+    
